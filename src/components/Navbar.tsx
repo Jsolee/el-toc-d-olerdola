@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { Menu, X } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import logo from '../assets/logo.JPG';
 
 const navLinks = ['home', 'about', 'instagram', 'contact'] as const;
 
@@ -51,14 +52,17 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 md:h-20">
           <button
             onClick={() => handleClick('home')}
-            className="group cursor-pointer bg-transparent border-none flex items-baseline gap-1.5"
+            className="group cursor-pointer bg-transparent border-none flex items-center gap-3"
           >
-            <span className="font-serif text-xl md:text-2xl font-bold tracking-tight text-warm-900 group-hover:text-terra transition-colors duration-300">
-              El Toc
-            </span>
-            <span className="font-serif text-sm md:text-base italic text-warm-500 group-hover:text-warm-700 transition-colors duration-300">
-              d'Olèrdola
-            </span>
+            <img src={logo} alt="El Toc d'Olèrdola" className="h-10 md:h-12 w-auto rounded-full object-cover" />
+            <div className="flex items-baseline gap-1.5">
+              <span className="font-serif text-xl md:text-2xl font-bold tracking-tight text-warm-900 group-hover:text-terra transition-colors duration-300">
+                El Toc
+              </span>
+              <span className="font-serif text-sm md:text-base italic text-warm-500 group-hover:text-warm-700 transition-colors duration-300">
+                d'Olèrdola
+              </span>
+            </div>
           </button>
 
           <div className="hidden md:flex items-center gap-10">
